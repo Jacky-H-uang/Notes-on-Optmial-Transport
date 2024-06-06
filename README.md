@@ -22,7 +22,7 @@ Where $C$ is a cost matrix where each point represents the cost between $f_m$ an
 Finally it is the optimization problem of transport theory as:
 
 $$
-d_{OT}(u,v|C) = \underset{T}{minimize}<{T,C}> \&
+d_{OT}(u,v|C) = \underset{T}{minimize}<{T,C}> \\
 subject \ to \ \ \ \ T1_N = u, T^\top 1_M = v, \ T \in \mathbb{R}_+^{M\times N}.
 $$
 
