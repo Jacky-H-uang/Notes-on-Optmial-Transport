@@ -14,7 +14,7 @@ where $u,v$ are discrete probability vectors with sum 1; $\delta_f$ is the Dirac
 Then there is the distance function:
 
 $$
-<T,C> = \sum_{m=1}^M\sum_{n=1}^N T_{m,n}C_{m,n}.
+<{T,C}> = \sum_{m=1}^M\sum_{n=1}^N T_{m,n}C_{m,n}.
 $$
 
 Where $C$ is a cost matrix where each point represents the cost between $f_m$ and $g_n$, e.g., $C_{m,n} = 1-sim(f_m,g_n)$; and $T$ is known as the transport plan, which is learned to minimize the total distance.
@@ -22,7 +22,7 @@ Where $C$ is a cost matrix where each point represents the cost between $f_m$ an
 Finally it is the optimization problem of transport theory as:
 
 $$
-d_{OT}(u,v|C) = \underset{T}{minimize}<T,C> \\
+d_{OT}(u,v|C) = \underset{T}{minimize}<{T,C}> \\
 subject \ to \ \ \ \ T1_N = u, T^\top 1_M = v, \ T \in \mathbb{R}_+^{M\times N}.
 $$
 
@@ -32,14 +32,14 @@ $$
 In addition are some variants of OT optimization which include fast optimization using Sinkhorn distance:
 
 $$
-d_{OT}(u,v|C) = \underset{T}{minimize}<T,C> - \lambda h(T) \\
+d_{OT}(u,v|C) = \underset{T}{minimize}<T,C> - \lambda h(T) \ \ \ \
 subject \ to \ \ \ \ T1_N = u, T^\top1_M = v, \ T \in \mathbb{R}_+^{M\times N}.
 $$
 
 Here $h(\cdot)$ is an entropy and $\lambda \ge 0$ is a hyperparameter; a fast optimization solution can be obtained from the above expression, requiring only a few iterations:
 
 $$
-T^* = diag(u^{(t)})exp(-C/\lambda)diag(v^{(t)}) \\
+T^* = diag(u^{(t)})exp(-C/\lambda)diag(v^{(t)}) \ \ \ \
 u^{(t)} = u / ((exp(-C/\lambda)v^{(t-1)})) \quad \ and \quad \ v^{(t)} = v / ((exp(-C/\lambda)^\top u^{(t-1)}))
 $$
 
