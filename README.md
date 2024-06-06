@@ -14,7 +14,7 @@ where $u,v$ are discrete probability vectors with sum 1; $\delta_f$ is the Dirac
 Then there is the distance function:
 
 $$
-\<T,C\> = \sum_{m=1}^M\sum_{n=1}^N T_{m,n}C_{m,n}.
+<<T,C>> = \sum_{m=1}^M\sum_{n=1}^N T_{m,n}C_{m,n}.
 $$
 
 Where $C$ is a cost matrix where each point represents the cost between $f_m$ and $g_n$, e.g., $C_{m,n} = 1-sim(f_m,g_n)$; and $T$ is known as the transport plan, which is learned to minimize the total distance.
